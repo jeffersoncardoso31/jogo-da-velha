@@ -4,6 +4,9 @@ let playerTime = 0;
 let simbolos = ['o','x']
 let gameOver = false
 let squares = document.querySelectorAll('.square')
+let player = []
+player.push(prompt('PLAYER 1: '))
+player.push(prompt('PLAYER 2: '))
 
  squares.forEach((square)=>{
     square.addEventListener('click', ondeClicou)
@@ -16,7 +19,7 @@ let squares = document.querySelectorAll('.square')
     if(movimento(posicao)){
         
         setTimeout(()=> {
-            alert('O jogo acabou - O Vencedor foi o jogador ' + playerTime)
+            alert('O jogo acabou - O Vencedor foi o jogador ' + player[playerTime])
         }, 10)
     }
     updateSquares(posicao)
@@ -46,7 +49,7 @@ function vitoria(){
         [0,1,2],
         [3,4,5],
         [6,7,8],
-        [0,3,5],
+        [0,3,6],
         [1,4,7],
         [2,5,8],
         [0,4,8],
