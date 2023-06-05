@@ -5,11 +5,16 @@ let simbolos = ['o','x']
 let gameOver = false
 let squares = document.querySelectorAll('.square')
 let player = []
+let reiniciar = document.getElementById('btn');
 player.push(prompt('PLAYER 1: '))
 player.push(prompt('PLAYER 2: '))
 
  squares.forEach((square)=>{
     square.addEventListener('click', ondeClicou)
+ })
+
+ reiniciar.addEventListener('click',()=>{
+    window.location.reload()
  })
 
  function ondeClicou(event){
